@@ -14,7 +14,7 @@ CODE_LEN = 7
 
 app = Flask(__name__)
 #Allow CORS, only local at the moment (Front end Running on localhost:8080) Need to change for production
-CORS(app, resources={r"/api/*": {"origins": ["http://localhost:8000", "http://127.0.0.1:8000"]}})
+CORS(app) #currently overidden to allow all requests
 
 db_url = os.getenv("DATABASE_URL", "sqlite:///shortener.db")
 if db_url.startswith("postgres://"):
