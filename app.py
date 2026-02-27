@@ -6,6 +6,7 @@ from flask_cors import CORS
 from datetime import datetime, timezone
 from urllib.parse import urlparse, quote_plus
 import redis 
+from dotenv import load_dotenv
 
 
 from flask import Flask, jsonify, redirect, render_template, request
@@ -13,6 +14,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 BASE62 = string.ascii_letters + string.digits
 CODE_LEN = 7
+load_dotenv()
 
 app = Flask(__name__)
 #Allow CORS, only local at the moment (Front end Running on localhost:8080) Need to change for production
